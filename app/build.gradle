@@ -7,8 +7,8 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 26
     defaultConfig {
-        applicationId "com.example.truptimangrule.kotlinfirsttry"
-        minSdkVersion 15
+        applicationId "com.example.truptimangrule.day1challengestopwatch"
+        minSdkVersion 16
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"

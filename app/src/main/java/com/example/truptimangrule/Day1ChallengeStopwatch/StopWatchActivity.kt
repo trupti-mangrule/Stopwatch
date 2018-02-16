@@ -1,4 +1,4 @@
-package com.example.truptimangrule.kotlinfirsttry
+package com.example.truptimangrule.Day1ChallengeStopwatch
 
 import android.app.Activity
 import android.support.v7.app.AppCompatActivity
@@ -170,31 +170,6 @@ class StopWatchActivity : AppCompatActivity() {
                 tv_hour?.text = Minutes.toString()
             }
 
-
-           /* if(miliSecondsList.size!=0){
-
-
-                var tempHourLap:Int=tv_hour.getText().toString().toInt()-tempHour
-                var tempMinLap:Int=tv_minute.getText().toString().toInt()-tempMin
-                var tempSecLap:Int=tv_seconds.getText().toString().toInt()-tempSec
-                println("lap time is "+tempHourLap+":"+tempMinLap+":"+tempSecLap)
-
-                if (tempHourLap.toString().length < 2) {
-                    tv_hour_lap?.text = "0" + tempHourLap.toString()
-                } else {
-                    tv_hour_lap?.text = tempHourLap.toString()
-                }
-                if (tempMinLap.toString().length < 2) {
-                    tv_minute_lap?.text = "0" + tempMinLap.toString()
-                } else {
-                    tv_minute_lap?.text = tempMinLap.toString()
-                }
-                if (tempSecLap.toString().length < 2) {
-                    tv_seconds_lap?.text = "0" + tempSecLap.toString()
-                } else {
-                    tv_seconds_lap?.text = tempSecLap.toString()
-                }
-            }*/
             if(miliSecondsList.size!=0){
                println("miliSecondsList.get(0) "+ miliSecondsList.get(0))
                println("UpdateTime-miliSecondsList.get(0).toInt() "+(UpdateTime-miliSecondsList.get(0).toInt()))
@@ -202,8 +177,8 @@ class StopWatchActivity : AppCompatActivity() {
 
                 var diff:Long=UpdateTime-miliSecondsList.get(0).toInt()
                var tempHourLap:Int=(diff.toInt()/1000)%60
-               var tempMinLap:Int=0
-               var tempSecLap:Int=0
+               var tempMinLap:Int=tempHourLap/60
+               var tempSecLap:Int=((diff%1000)%100).toInt()
 
 
                 if(tempHourLap>60){
@@ -254,9 +229,6 @@ class StopWatchActivity : AppCompatActivity() {
                 } else {
                     tv_seconds_lap?.text = tempSecLap.toString()
                 }
-
-               // println("lap time is test "+tempHourLap+":"+tempMinLap+":"+tempSecLap)
-
             }
 
             handler?.postDelayed(this, 0)
